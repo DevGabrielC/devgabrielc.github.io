@@ -332,6 +332,12 @@ section.formulario{
     padding:80px 4%;
 }
 
+.error-msg {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
 form{
     max-width: 500px;
     margin: 0 auto;
@@ -415,7 +421,7 @@ footer .line-footer p a{
     }
 
     /* CABEÇALHO */
-    @media screen and (max-width: 1096px){
+    @media screen and (max-width: 1203px){
         .menu-desktop, .btn-contato{
             display: none;
         }

@@ -139,12 +139,21 @@
             <div class="interface">
                 <h2 class="titulo">FALE <span>COMIGO.</span></h2>
                 <form action="">
-                    <input type="text" name="" id="" required placeholder="Seu nome completo:">
-                    <input type="text" name="" id="" required placeholder="Seu e-mail:">
-                    <input type="text" name="" id="" placeholder="Seu celular:">
-                    <textarea name="" id="" required placeholder="Sua mensagem"></textarea>
+                    <input type="text" name="nome" id="nome" required placeholder="Seu nome completo:">
+                    <span class="error-msg" id="nome-error"></span>
+                
+                    <input type="text" name="email" id="email" required placeholder="Seu e-mail:">
+                    <span class="error-msg" id="email-error"></span>
+                
+                    <input type="text" name="celular" id="celular" placeholder="Seu celular:">
+                    <span class="error-msg" id="celular-error"></span>
+                
+                    <textarea name="mensagem" id="mensagem" required placeholder="Sua mensagem"></textarea>
+                    <span class="error-msg" id="mensagem-error"></span>
+                
                     <div class="btn-enviar"><input type="button" value="Enviar"></div>
                 </form>
+                
                 </div> <!--flex-->
             </div> <!--interface-->
         </section> <!--Formulario-->
