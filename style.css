@@ -341,6 +341,7 @@ form input, form textarea{
     padding: 20px 15px;
     border-radius: 20px;
     font-size: 18px;
+    color: white;
 }
 
 form textarea{
