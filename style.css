@@ -13,7 +13,7 @@ body{
 }
 
 .interface {
-    max-width: 1280px;
+    max-width: 1920px;
     margin: 0 auto;   
     padding: 0 20px;
 }
@@ -22,7 +22,7 @@ body{
     display: flex;
 }
 
-.btn-contato button {
+.btn-contato button, .menu-desktop ul li button {
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
@@ -31,6 +31,15 @@ body{
     border-radius: 30px;
     cursor: pointer;
     transition: .2s;
+    color: white;
+    border: none;
+}
+
+.menu-desktop ul li button a {
+    color: white;
+}
+
+.menu-desktop ul li button a:hover {
     color: white;
 }
 
@@ -348,8 +357,6 @@ form textarea{
     resize: none;
     height: 250px;
 }
-
-
 
 form .btn-enviar{
     margin-top: 20px;
