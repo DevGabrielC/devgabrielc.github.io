@@ -14,7 +14,7 @@ overlay.addEventListener('click', ()=>(
     menu.classList.remove('abrir-menu')
 ))
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]', 'button').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
@@ -72,8 +72,7 @@ document.querySelector('.btn-enviar input[type="button"]').addEventListener('cli
     if (hasError) {
         return;
     }
-
-    // Se não houver erros, continue com o envio
+    // Se nao houver erro, prosseguir
     const nome = nomeInput.value;
     const email = emailInput.value;
     const celular = celularInput.value;
@@ -83,10 +82,75 @@ document.querySelector('.btn-enviar input[type="button"]').addEventListener('cli
     const corpo = `👤 Nome: ${nome}\r\n📧 Email: ${email}\r\n📱 Celular: ${celular}\r\n💬 Mensagem: ${mensagem}`;
 
     window.location.href = `mailto:gabrielcoelho20003@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
-
-    // Limpa os campos do formulário
+    // Limpar dados do formulário após envio
     nomeInput.value = '';
     emailInput.value = '';
     celularInput.value = '';
     mensagemInput.value = '';
+});
+
+const btnToggleTheme = document.getElementById('btn-toggle-theme');
+const body = document.body;
+const icon = document.createElement('i')
+const logoTopo = document.getElementById('logo-topo');
+const logoFooter = document.getElementById('logo-footer');
+
+// Iniciar site no tema claro
+icon.classList.add('bi', 'bi-sun-fill');
+btnToggleTheme.appendChild(icon);
+
+btnToggleTheme.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+
+    if (body.classList.contains('dark-theme')) {
+        icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+        logoTopo.src = 'images/Branco 175x104.png';
+        logoFooter.src = 'images/Branco 175x104.png';
+    } else {
+        icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+        logoTopo.src = 'images/Preto 175x104.png';
+        logoFooter.src = 'images/Preto 175x104.png';
+    }
+});
+
+function checkSectionVisibility() {
+    const secaoInicio = document.getElementById('secao-inicio');
+    const secaoInicioTop = secaoInicio.getBoundingClientRect().top;
+
+    // Se a seção "Topo do Site" estiver fora da tela, esconder o botão
+    if (secaoInicioTop < 0) {
+        btnToggleTheme.style.display = 'none';
+    } else {
+        btnToggleTheme.style.display = 'flex';
+    }
+}
+
+window.addEventListener('scroll', checkSectionVisibility);
+
+const btnBackToTop = document.getElementById('btn-back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        btnBackToTop.style.display = 'block';
+    } else {
+        btnBackToTop.style.display = 'none';
+    }
+});
+
+btnBackToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (body.classList.contains('dark-theme')) {
+        logoTopo.src = 'images/Branco 175x104.png';
+        logoFooter.src = 'images/Branco 175x104.png';
+    } else {
+        logoTopo.src = 'images/Preto 175x104.png';
+        logoFooter.src = 'images/Preto 175x104.png';
+    }
+});
+
+btnBackToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });

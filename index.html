@@ -16,7 +16,7 @@
         <div class="interface">
             <div class="logo">
                 <a href="#">
-                    <img src="images/Preto 175x104.png" alt="Logo Portfolio">
+                    <img src="images/Preto 175x104.png" alt="Logo Portfolio" id="logo-topo">
                 </a>
             </div><!--logo-->
             <nav class="menu-desktop">
@@ -25,7 +25,6 @@
                     <li><a href="#secao-especialidades">Especialidades</a></li>
                     <li><a href="#secao-sobre">Sobre</a></li>
                     <li><a href="#secao-projetos">Projetos</a></li>
-                    <li><a href="#secao-form">Contato</a></li>
                 </ul>
             </nav>
 
@@ -61,7 +60,7 @@
                     <h1>Desenvolvedor Backend<span>.</span></h1>
                     <p>Estou começando na área de backend, me interesso em linguagens como Python, Java, C#, C++, etc. Pretendo criar projetos que tenho em mente e/ou ideias dadas por amigos.</p>
                     <div class="btn-contato">
-                        <a href="#">
+                        <a href="#secao-form">
                             <button>Entre em contato</button>
                         </a>
                     </div>
@@ -78,8 +77,8 @@
                 <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
                 <div class="flex">
                     <div class="especialidades-box">
-                        <i class="bi bi-code-square"></i>
-                        <h3>WebSite</h3>
+                        <i class="bi bi-people-fill"></i>
+                        <h3>Soft Skills</h3>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae itaque eius magnam autem voluptatibus impedit! Ad, voluptate voluptates!</p>
                     </div> <!--especialidades-box-->
                     <div class="especialidades-box">
@@ -88,12 +87,14 @@
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, ducimus modi sequi consequatur earum debitis obcaecati similique quod!</p>
                     </div> <!--especialidades-box-->
                     <div class="especialidades-box">
-                        <i class="bi bi-wordpress"></i>
-                        <h3>Blog</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae cumque illo sit doloremque minus cupiditate voluptatum necessitatibus saepe!</p>
+                        <i class="bi bi-code"></i>
+                        <h3>Linguagens e tecnologias</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, ducimus modi sequi consequatur earum debitis obcaecati similique quod!</p>
+                        </div> <!--linguagens-box-->
                     </div> <!--especialidades-box-->
                 </div> <!--flex-->
             </div> <!--interface-->
+            <button id="btn-toggle-theme"></button>
         </section> <!--Especialidades-->
 
         <section class="sobre" id="secao-sobre">
@@ -164,8 +165,8 @@
         <div class="interface">
                 <div class="line-footer">
                     <div class="flex">
-                        <div class="logo-footer">
-                            <img src="images/Preto 175x104.png" alt="">
+                        <div class="footer">
+                            <img src="images/Preto 175x104.png" alt="#" id="logo-footer">
                         </div> <!--logo-footer-->
                             <div class="btn-social">
                                 <a href="https://www.linkedin.com/in/gabrielalvescoelho/" target="_blank" rel="noopener noreferrer"><button><i class="bi bi-linkedin"></i></button></a>
@@ -180,5 +181,6 @@
             </div> <!--line-footer-->
         </div> <!--interface-->
     </footer>
+    <button id="btn-back-to-top"><i class="bi bi-arrow-up"></i></button><!--btn-voltar-ao-topo-->
 </body>
 </html>

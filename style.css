@@ -12,6 +12,15 @@ body{
     transition: background-color 0.5s, color 0.5s;
 }
 
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme a {
+    color: #ffffff;
+}
+
 .interface {
     max-width: 1920px;
     margin: 0 auto;   
@@ -125,6 +134,26 @@ header nav.menu-desktop ul li {
     display: inline-block;
     padding: 0 40px;
     font-size: 20px;
+}
+
+#btn-toggle-theme {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #6E00D8;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+#btn-toggle-theme:hover {
+    background-color: #6E00D8;
 }
 
 /* ESTILO DO MENU MOBILE */
@@ -408,6 +437,27 @@ footer .line-footer p a{
     color: #6E00D8;
     font-size: 20px;
     text-decoration: none;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    font-size: 20px;
+    background-color: #6E00D8;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#btn-back-to-top:hover {
+    background-color: #6E00D8;
+    transform: scale(1.1);
 }
 
     /* CLASSES GERAIS */
