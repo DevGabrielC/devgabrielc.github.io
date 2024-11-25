@@ -12,15 +12,6 @@ body{
     transition: background-color 0.5s, color 0.5s;
 }
 
-body.dark-theme {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-body.dark-theme a {
-    color: #ffffff;
-}
-
 .interface {
     max-width: 1920px;
     margin: 0 auto;   

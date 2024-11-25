@@ -95,24 +95,6 @@ const icon = document.createElement('i')
 const logoTopo = document.getElementById('logo-topo');
 const logoFooter = document.getElementById('logo-footer');
 
-// Iniciar site no tema claro
-icon.classList.add('bi', 'bi-sun-fill');
-btnToggleTheme.appendChild(icon);
-
-btnToggleTheme.addEventListener('click', () => {
-    body.classList.toggle('dark-theme');
-
-    if (body.classList.contains('dark-theme')) {
-        icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
-        logoTopo.src = 'images/Branco 175x104.png';
-        logoFooter.src = 'images/Branco 175x104.png';
-    } else {
-        icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
-        logoTopo.src = 'images/Preto 175x104.png';
-        logoFooter.src = 'images/Preto 175x104.png';
-    }
-});
-
 function checkSectionVisibility() {
     const secaoInicio = document.getElementById('secao-inicio');
     const secaoInicioTop = secaoInicio.getBoundingClientRect().top;
