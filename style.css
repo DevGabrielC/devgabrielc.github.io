@@ -71,6 +71,7 @@ section.especialidades .flex{
     margin-top: 45px;
     border-radius: 20px;
     transition: .2s;
+    min-width: 540px;
 }
 
 .especialidades .especialidades-box:hover{
@@ -125,26 +126,6 @@ header nav.menu-desktop ul li {
     display: inline-block;
     padding: 0 40px;
     font-size: 20px;
-}
-
-#btn-toggle-theme {
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: 600;
-    background-color: #6E00D8;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#btn-toggle-theme:hover {
-    background-color: #6E00D8;
 }
 
 /* ESTILO DO MENU MOBILE */
