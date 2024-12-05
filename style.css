@@ -95,6 +95,10 @@ section.especialidades .flex{
     padding: 20px 4%;
 }
 
+.especialidades .especialidades-box li a {
+    text-decoration: none;
+} 
+
 /* ESTILO DO CABEÇALHO */
 header{
     padding: 40px 4%;
@@ -413,10 +417,10 @@ footer .line-footer p a{
 
 #btn-back-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 20px;
-    font-size: 20px;
+    bottom: 15px;
+    right: 15px;
+    padding: 15px;
+    font-size: 15px;
     background-color: #6E00D8;
     color: white;
     border: none;
