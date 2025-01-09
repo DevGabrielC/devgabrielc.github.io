@@ -75,7 +75,8 @@ document.querySelector('.btn-enviar input[type="button"]').addEventListener('cli
     // Se nao houver erro, prosseguir
     const nome = nomeInput.value;
     const email = emailInput.value;
-    const celular = celularInput.value;
+    const celular = celularInput.value.replace(/\D/g, '')
+    .replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
     const mensagem = mensagemInput.value;
 
     const assunto = `Contato do portfólio - ${nome}`;
@@ -85,11 +86,16 @@ document.querySelector('.btn-enviar input[type="button"]').addEventListener('cli
     // Limpar dados do formulário após envio
     nomeInput.value = '';
     emailInput.value = '';
-    celularInput.value = '';
     mensagemInput.value = '';
 });
 
-const btnToggleTheme = document.getElementById('btn-toggle-theme');
+celularInput.addEventListener('input', () => {
+    let celular = celularInput.value.replace(/\D/g, '');
+    if (celular.length > 11) celular = celular.slice(0, 11);
+    celular = celular.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+    celularInput.value = celular;
+});
+
 const body = document.body;
 const icon = document.createElement('i')
 const logoTopo = document.getElementById('logo-topo');
@@ -121,16 +127,6 @@ window.addEventListener('scroll', () => {
 
 btnBackToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    if (body.classList.contains('dark-theme')) {
-        logoTopo.src = 'images/Branco 175x104.png';
-        logoFooter.src = 'images/Branco 175x104.png';
-    } else {
-        logoTopo.src = 'images/Preto 175x104.png';
-        logoFooter.src = 'images/Preto 175x104.png';
-    }
 });
 
 btnBackToTop.addEventListener('click', () => {
