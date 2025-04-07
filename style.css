@@ -58,6 +58,12 @@ h2.titulo span{
     color: #6E00D8;
 }
 
+.txt-topo-site p span {
+    color: #6E00D8;
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+}
+
 button:hover, form .btn-enviar input:hover{
     box-shadow: 0px 0px 8px #6E00D8;
     transform: scale(1.05);
@@ -87,7 +93,7 @@ section.especialidades .flex{
 
 .especialidades .especialidades-box i{
     font-size: 65px;
-    color: #6E00D8;
+    color: white;
     align-items: center;
     padding: 20px 4%;
 }
