@@ -1,8 +1,25 @@
-
 /* ESTILO DO SITE */
+:root {
+    --background-color: black;
+    --text-color: white;
+    --primary-color: #6E00D8;
+    --secondary-color: rgb(68, 68, 68);
+    --shadow-color: #6E00D8;
+    --header-link-color: rgb(85, 85, 85);
+    --btn-text-color: white;
+}
+
+body.light-mode {
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --primary-color: #6E00D8;
+    --secondary-color: #e4e6eb;
+    --shadow-color: rgba(110, 0, 216, 0.5);
+    --header-link-color: #555;
+    --btn-text-color: white;
+}
+
 *{
-    background-color: black;
-    color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,8 +27,10 @@
 }
 
 body{
+    background-color: var(--background-color);
+    color: var(--text-color);
     height: 100px;
-    transition: background-color 0.5s, color 0.5s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .interface {
@@ -28,44 +47,45 @@ body{
     padding: 10px 40px;
     font-size: 18px;
     font-weight: 600;
-    background-color: #6E00D8;
+    background-color: var(--primary-color);
     border: 0;
     border-radius: 30px;
     cursor: pointer;
     transition: .2s;
-    color: white;
+    color: var(--btn-text-color);
     border: none;
 }
 
 .menu-desktop ul li a {
-    color: white;
+    color: var(--text-color);
 }
 
 .menu-desktop ul li button a {
-    color: white;
+    color: var(--btn-text-color);
 }
 
 .menu-desktop ul li button a:hover {
-    color: white;
+    color: var(--btn-text-color);
 }
 
 h2.titulo{
     font-size: 34px;
     text-align: center;
+    color: var(--text-color);
 }
 
 h2.titulo span{
-    color: #6E00D8;
+    color: var(--primary-color);
 }
 
 .txt-topo-site p span {
-    color: #6E00D8;
+    color: var(--primary-color);
     font-size: 25px;
     font-family: "Poppins", sans-serif;
 }
 
 button:hover, form .btn-enviar input:hover{
-    box-shadow: 0px 0px 8px #6E00D8;
+    box-shadow: 0px 0px 8px var(--shadow-color);
     transform: scale(1.05);
 }
 
@@ -76,25 +96,34 @@ section.especialidades{
 
 section.especialidades .flex{
     gap: 60px;
-    flex-direction: inherit;
+    flex-direction: row; /* Padrão para desktop */
+    justify-content: center;
+    align-items: stretch;
 }
 .especialidades .especialidades-box{
     padding: 40px;
     margin-top: 45px;
     border-radius: 20px;
     transition: .2s;
-    min-width: 540px;
+    background-color: var(--secondary-color);
+    width: 30%; /* Para alinhar melhor em telas grandes */
 }
 
 .especialidades .especialidades-box:hover{
     transform: scale(1.05);
-    box-shadow: 0 0 20px #6E00D8
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+
+.especialidades .especialidades-box i,
+.especialidades .especialidades-box h3,
+.especialidades .especialidades-box li,
+.especialidades .especialidades-box li a {
+    background-color: transparent;
+    color: var(--text-color);
 }
 
 .especialidades .especialidades-box i{
     font-size: 65px;
-    color: white;
-    align-items: center;
     padding: 20px 4%;
 }
 .especialidades .especialidades-box h3{
@@ -109,7 +138,7 @@ section.especialidades .flex{
 
 .especialidades .especialidades-box li a {
     text-decoration: none;
-} 
+}
 
 /* ESTILO DO CABEÇALHO */
 header{
@@ -117,14 +146,13 @@ header{
 }
 
 header .interface {
-    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 header a {
-    color: rgb(85, 85, 85);
+    color: var(--header-link-color);
     text-decoration: none;
     display: inline-block;
 }
@@ -133,7 +161,7 @@ header .menu-desktop a:hover{
     text-decoration: none;
     transform: scale(1.05);
     transition: .2s;
-    color: #6E00D8;
+    color: var(--primary-color);
 }
 header nav ul{
     list-style-type: none;
@@ -144,13 +172,38 @@ header nav.menu-desktop ul li {
     padding: 0 40px;
     font-size: 20px;
 }
+.btn-tema {
+    position: absolute;
+    top: 45px;
+    right: 5%;
+    z-index: 10;
+}
+
+/* Botão de Tema */
+.btn-tema button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-tema button i {
+    background-color: transparent;
+    color: white;
+}
 
 /* ESTILO DO MENU MOBILE */
 .btn-abrir-menu{
     display: none;
 }
 .btn-abrir-menu i{
-    color: #6E00D8;
+    color: var(--primary-color);
     font-size: 40px;
 }
 
@@ -159,7 +212,7 @@ header nav.menu-desktop ul li {
 }
 
 .overlay-menu{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -169,7 +222,7 @@ header nav.menu-desktop ul li {
     display: none;
 }
 .menu-mobile{
-    background-color: rgb(0, 0, 0);
+    background-color: var(--background-color);
     height: 100vh;
     position: fixed;
     top: 0;
@@ -193,7 +246,8 @@ header nav.menu-desktop ul li {
 }
 
 .menu-mobile nav ul li a{
-    color: white;
+    background-color: transparent;
+    color: var(--text-color);
     font-size: 20px;
     font-weight: 300;
     padding: 20px 8%;
@@ -201,12 +255,12 @@ header nav.menu-desktop ul li {
 }
 
 .menu-mobile nav ul li a:hover{
-    background-color: #6E00D8;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--btn-text-color);
 }
 
 .menu-mobile .btn-fechar i{
-    color: #6E00D8;
+    color: var(--primary-color);
     font-size: 40px;
 }
 
@@ -215,7 +269,6 @@ header nav.menu-desktop ul li {
 }
 
 /* ESTILO DO TOPO DO SITE */
-
 section.topo-do-site{
     padding: 40px 4%;
 }
@@ -224,20 +277,22 @@ section.topo-do-site .flex{
     align-items: center;
     justify-content: center;
     gap: 90px;
-    flex-direction: inherit;
+    flex-direction: row; /* Padrão desktop */
 }
 
 .topo-do-site h1{
     font-size: 42px;
     line-height: 40px;
+    color: var(--text-color);
 }
 
 .topo-do-site .txt-topo-site h1 span{
-    color: #6E00D8;
+    color: var(--primary-color);
 }
 
 .topo-do-site .txt-topo-site p{
     margin: 30px 0px;
+    color: var(--text-color);
 }
 
 .topo-do-site .img-topo-site img{
@@ -247,7 +302,7 @@ section.topo-do-site .flex{
     border-top-right-radius:50px;
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
-    box-shadow:0px 0px 15px 4px #6E00D8;
+    box-shadow:0px 0px 15px 4px var(--shadow-color);
 }
 
 @keyframes flutuar{
@@ -260,7 +315,6 @@ section.topo-do-site .flex{
 }
 
 /* ESTILO SOBRE */
-
 section.sobre{
     padding: 60px 4%;
 }
@@ -268,23 +322,25 @@ section.sobre{
 section.sobre .flex{
     align-items: center;
     gap: 60px;
-    flex-direction: inherit;
+    flex-direction: row; /* Padrão desktop */
 }
 
 .sobre .txt-sobre h2{
     font-size: 30px;
     line-height: 40px;
     margin-bottom: 30px;
+    color: var(--text-color);
 }
 
 .sobre .txt-sobre h2 span{
-    color: #6E00D8;
+    color: var(--primary-color);
     display: block;
 }
 
 .sobre .txt-sobre p{
     margin: 20px 0;
     text-align: justify;
+    color: var(--text-color);
 }
 
 .btn-social button {
@@ -292,24 +348,29 @@ section.sobre .flex{
     height: 60px;
     border-radius: 30px;
     border: 0;
-    background-color: black;
+    background-color: var(--primary-color);
     font-size: 30px;
     cursor: pointer;
     margin: 0 5px;
     transition: .2s;
 }
 
-/* ESTILO DO PROJETO */
+.btn-social button i {
+    background-color: transparent;
+    color: white;
+}
 
+/* ESTILO DO PROJETO */
 section.projetos{
     padding: 80px 4%;
-    box-shadow: 0 0 40px 10px rgb(85, 85, 85);
+    box-shadow: 0 0 40px 10px rgba(85, 85, 85, 0.2);
 }
 
 section.projetos .flex{
     justify-content: space-around;
     margin-top: 60px;
-    flex-direction: inherit;
+    flex-direction: row; /* Padrão desktop */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha */
 }
 
 .img-proj{
@@ -321,6 +382,7 @@ section.projetos .flex{
     cursor: pointer;
     border-radius: 40px;
     position: relative;
+    margin-bottom: 20px; /* Espaçamento para quando quebrar a linha */
 }
 
 .img-proj:hover{
@@ -372,13 +434,13 @@ form{
 
 form input, form textarea{
     width: 100%;
-    background-color: rgb(68, 68, 68);
+    background-color: var(--secondary-color);
     border: 0;
     outline: 0;
     padding: 20px 15px;
     border-radius: 20px;
     font-size: 18px;
-    color: white;
+    color: var(--text-color);
 }
 
 form textarea{
@@ -393,24 +455,22 @@ form .btn-enviar{
 
 form .btn-enviar input{
     width: 120px;
-    background-color: #6E00D8;
-    color: black;
+    background-color: var(--primary-color);
     font-weight: 700;
     cursor: pointer;
     transition: .2s;
-    color: white;
+    color: var(--btn-text-color);
 }
 
 /* ESTILO DO RODAPÉ */
-
 footer {
     padding: 40px 4%;
-    box-shadow: 0 0 40px 10px rgb(85, 85, 85);
+    box-shadow: 0 0 40px 10px rgba(85, 85, 85, 0.2);
 }
 
 footer .flex{
     justify-content: space-between;
-    flex-direction: inherit;
+    flex-direction: row; /* Padrão desktop */
 }
 
 footer .line-footer{
@@ -418,16 +478,16 @@ footer .line-footer{
 }
 
 .borda{
-    border-top: 2px solid #6E00D8;
+    border-top: 2px solid var(--primary-color);
 }
 
 footer .line-footer p i{
-    color: #6E00D8;
+    color: var(--primary-color);
     font-size: 24px;
 }
 
 footer .line-footer p a{
-    color: #6E00D8;
+    color: var(--primary-color);
     font-size: 20px;
     text-decoration: none;
 }
@@ -438,7 +498,7 @@ footer .line-footer p a{
     right: 15px;
     padding: 15px;
     font-size: 15px;
-    background-color: #6E00D8;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 30px;
@@ -453,32 +513,35 @@ footer .line-footer p a{
     transform: scale(1.1);
 }
 
+/* ================================== */
+/* RESPONSIVIDADE            */
+/* ================================== */
+@media screen and (max-width: 1203px){
     /* CLASSES GERAIS */
     .flex{
         flex-direction: column;
-    }    
+    }
 
     h2.titulo{
-        font-size: 34px;
-        line-height: 30px;
+        font-size: 30px;
+        line-height: 35px;
     }
 
     /* CABEÇALHO */
-    @media screen and (max-width: 1203px){
-        .menu-desktop, .btn-contato{
-            display: none;
-        }
-    /* TOPO DO SITE */
-
+    .menu-desktop, .btn-contato, .btn-tema{
+        display: none;
+    }
+    
     .btn-abrir-menu{
         display: block;
     }
+
+    /* TOPO DO SITE */
     section.topo-do-site .flex{
-        gap: 40px;
         flex-direction: column-reverse;
     }
     section.topo-do-site{
-        padding: 20px 8%;
+        padding: 40px 8%;
     }
     .topo-do-site h1{
         font-size: 30px;
@@ -488,32 +551,26 @@ footer .line-footer p a{
         width: 100%;
     }
 
-    /* ESTILO DAS ESPECIALIDADES */
+    /* ESPECIALIDADES */
     section.especialidades{
-        padding: 40px 10%;
-        flex-direction: column;
+        padding: 35px 8%;
     }
-
-    section.especialidades .flex{
-        gap: 60px;
-        flex-direction: column;
+    .especialidades .especialidades-box{
+        width: 100%;
+        min-width: unset;
     }
+    section.especialidades .flex {
+    flex-direction: column;
+    gap: 40px; /* Adiciona um espaço vertical entre os blocos */
+}
 
     /* SOBRE */
     section.sobre{
-        padding: 60px 10%;
+        padding: 80px 8%;
     }
-
-    section.sobre .flex{
-        flex-direction: column;
-    }
-
     .sobre .txt-sobre h2{
-        font-size: 30px;
-        line-height: 35px;
         text-align: center;
     }
-
     .btn-social{
         text-align: center;
     }
@@ -524,24 +581,15 @@ footer .line-footer p a{
 
     /* PROJETOS */
     section.projetos{
-        padding: 80px 10%;
+        padding: 80px 8%;
     }
-
     .img-proj{
         width: 100%;
         max-width: 360px;
         margin: 0 auto;
-        background-size: cover;
-        background-position: 100% 0%;
-        transition: 8s;
-        cursor: pointer;
-        border-radius: 40px;
-        position: relative;
     }
-
     section.projetos .flex{
-        gap: 60px;
-        flex-direction: column;
+        gap: 40px;
     }
 
     /* RODAPÉ */
@@ -549,7 +597,6 @@ footer .line-footer p a{
         flex-direction: column;
         gap: 30px;
     }
-
     footer .line-footer{
         text-align: center;
     }
